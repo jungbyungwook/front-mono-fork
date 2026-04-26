@@ -35,7 +35,7 @@ export const User = async ({ nickname }: { nickname: string }) => {
           () => onlyServerProfileApi.getUserProfile(ouid),
           () => onlyServerProfileApi.getBestRating(ouid),
           async () => {
-            const matchIds = await onlyServerMatchApi.getMatchIds(ouid, 1, 20);
+            const matchIds = await onlyServerMatchApi.getMatchIds(ouid, 1, 8);
             return onlyServerMatchApi.getMatchList(matchIds);
           },
         ]}

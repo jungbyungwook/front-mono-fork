@@ -8,7 +8,7 @@ export const MatchQueries = {
     infiniteQueryOptions({
       queryKey: [MATH_QUERY_KEY.INFINITY, ouid],
       queryFn: async ({ pageParam = 1 }) => {
-        const nextMatchIds = await getMatchIdsApi(ouid, pageParam, 20);
+        const nextMatchIds = await getMatchIdsApi(ouid, pageParam, 8);
         const matchDetails = await getMatchListApi(nextMatchIds);
         return matchDetails;
       },

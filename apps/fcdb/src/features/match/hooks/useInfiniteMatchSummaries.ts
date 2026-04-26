@@ -21,7 +21,7 @@ import {
 export function useInfiniteMatchSummaries(
   ouid: string,
   matchList: MatchDetailResponse[],
-  profileInfo: UserProfileResponse
+  profileInfo: UserProfileResponse,
 ) {
   const { data, fetchNextPage, isLoading, hasNextPage, isFetchingNextPage } =
     useInfiniteQuery(MatchQueries.infinityMatchQuery(ouid, matchList));
@@ -49,12 +49,12 @@ export function useInfiniteMatchSummaries(
           matchPlayers,
           matches: match,
         };
-      })
+      }),
     );
   }, [data]);
 
   const initialData = useMemo(() => {
-    return infiniteSummaries.slice(0, 20);
+    return infiniteSummaries.slice(0, 8);
   }, [matchList]);
 
   const loading = useMemo(() => {
